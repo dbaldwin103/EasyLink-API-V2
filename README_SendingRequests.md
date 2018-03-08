@@ -31,8 +31,8 @@ Content-Type: application/json
 
 ***your_api_suffix*** will let Rinchem know what type of request you are about to send, either an *Inbound* or an *Outbound* order.
 
-> **/services/apexrest/v1/outbound** - will let us know your request is referencing an Outbound record.
-> **/services/apexrest/v1/inbound** - will let us know your request is referencing an Inbound record.
+> **/services/apexrest/v2/outbound** - will let us know your request is referencing an Outbound record.
+> **/services/apexrest/v2/inbound** - will let us know your request is referencing an Inbound record.
 
 ***your_instance_url*** and ***your_access_token*** should have been retrieved and stored during the authentication process. 
 
