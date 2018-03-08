@@ -6,18 +6,18 @@ There are four primary groups of errors: improper payloads that will fail prior 
 
 ## Improper Payloads
 
-Depending on the API being called there is a very specific format that the payload must conform to. These formats are detailed in other documentation, see *README_OBO.md* or *README_ASN.md*. 
+Depending on the API being called there is a very specific format that the payload must conform to. These formats are detailed in the ***README_BuildingPayloads.md*** file.
 
-The two most common errors in this category will occur in instance of an unrecognized field being sent, or a string being sent to a number field. These responses will be sent directly from Salesforce and will return as an array containing objects with fields *message* and *errorCode*. **Since these errors fail at deserialization before entering the API method, they cannot be handled by the API, and will be the responsibility of the sending party to handle and correct!**
+The two most common errors in this category will occur in instance of an unrecognized field being sent, or a string being sent to a number field. These responses will be sent directly from Salesforce and will return as an array containing objects with fields *message* and *errorCode*. **Since these errors fail at deserialization before entering the API method, they cannot be handled by the API, and will be the responsibility of the sending party to handle and correct! No notification will be sent out!**
 
 #### Unrecognized Field
 
-In this example the field **Quantitay__c** is accidentally sent instead of **Quantity__c**.
+In this example the field **Quantitay** is accidentally sent instead of **Quantity**.
 
 ```
 [
     {
-        "message": "No such column 'Quantitay__c' on sobject of type OBO_Line_Item__c at [line:53, column:23]",
+        "message": "No such column 'Quantitay' on object of type EasyLink_Payload_Line at [line:53, column:23]",
         "errorCode": "JSON_PARSER_ERROR"
     }
 ]
@@ -38,7 +38,7 @@ This may happen in the case of text being sent to a number field or an invalid d
 
 ## Invalid Payloads - Pre Staging
 
-These errors occur when the payload is able to be de-serialized by Salesforce, however, there are fields with invalid data that can be caught with a preliminary check, prior to sending to the wms. The most common error of this type, is a missing required field. These responses will have the format of an object with fields *status*, *obos* or *asns*, and *message*. **These errors currently create no record on the Salesforce side and will be the responsibility of the sending party to handle and correct!**
+These errors occur when the payload is able to be de-serialized by Salesforce, however, there are fields with invalid data that can be caught with a preliminary check, prior to sending to the wms. The most common error of this type, is a missing required field. These responses will have the format of an object with fields *status*, and *message*. These errors will create an error case in the Chem-Star Portal. Errors of this type will require the full payload to be corrected and  and will be the responsibility of the sending party to handle and correct!**
 
 #### Missing Required Field
 
@@ -47,21 +47,13 @@ In this example, the required field **From_Warehouse_Code__c**, was omitted from
 ```
 {
     "status": "Error",
-    "obos": [
-        {
-            "statuses": null,
-            "obo": null,
-            "lineItems": null,
-            "customFields": null
-        }
-    ],
     "message": "Your request failed with the following error: Insert failed. First exception on row 0; first error: REQUIRED_FIELD_MISSING, Required fields are missing: [From_Warehouse_Code__c]: [From_Warehouse_Code__c]Class.OBO_Service_V1.handlePostNew: line 176, column 1\nClass.OBO_Service_V1.doPost: line 64, column 1"
 }
 ```
 
 ## Invalid Payloads - Post Staging
 
-These errors occur when the payload passes all the smell tests and is sent over to the WMS staging table. If the payload makes it to this stage, a successful response will be returned by the API. Errors will occur when the WMS tries to process the request. The error will then be recorded on the case that was created from the payload. **How users will be alerted of these errors, and how they will be handled, has yet to be set in stone.**
+These errors occur when the payload passes all the smell tests and is sent over to the WMS staging table. If the payload makes it to this stage, a successful response will be returned by the API. Errors will occur when our Warehouse Management System tries to process the request. These errors will will create an error case in the Chem-Star Portal . **How users will be alerted of these errors, and how they will be handled, has yet to be set in stone.**
 
 ![img](file:///C:/Users/jdenning/Documents/Typora/Resources/ExampleApiError_PostStaging.PNG?lastModify=1509393627)
 
