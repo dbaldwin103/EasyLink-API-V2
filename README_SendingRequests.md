@@ -114,7 +114,3 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-
-
-## Unsuccessful Responses (Error Handling)
-
