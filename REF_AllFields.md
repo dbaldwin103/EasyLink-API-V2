@@ -1,5 +1,25 @@
 # Easy-Link V2 - Fields
 
+#### Table Of Contents
+
+> [Overview](#overview)
+>
+> [Header Fields](#header-fields)
+> > [Record Fields](#record-fields)<br/>
+> > [General Fields](#general-fields)<br/>
+> > [Contact Fields](#contact-fields)<br/>
+> > [Freight Fields](#freight-fields)<br/>
+> > [Ship To Fields](#ship-to-fields)<br/>
+> > [Ship From Fields](#ship-from-fields)<br/>
+>
+> [Line Item Fields](#line-item-fields)
+> > [Record Fields](#record-fields)<br/>
+> > [Product Number Fields](#product-number-fields)<br/>
+> > [General Fields](#general-fields)<br/>
+> > [Status and Attribute Fields](#status-and-attribute-fields)<br/>
+
+## Overview
+
 To ensure ease of use for all our integrating customers, we have created a set of generic fields with a consistent and intuitive naming structure, to collect your data. To simplify the process of both sending and receiving the payload, we have opted to use the same payload for both Facility to Warehouse (F2W) and Warehouse to Facility (W2F) requests. 
 
 The available fields are listed below in the given tables. They are separated into related groups in order to make their meaning and relationship more apparent. Items that aren't entirely self apparent are given descriptions in subsequent text. If you have any issues understanding what data you might need to map in to a specific field, please don't hesitate to ask your Rinchem contact.
@@ -147,7 +167,7 @@ The **ShipFrom** fields let us know the material's origin of shipment. The **Shi
 
 The **RecordLine_Number** is a required field that allows you to reference the line item in *update* and *get* calls. Each value must be unique to the order, meaning two lines could not both have a *RecordLine_Number* of '1'. If this occurs, the payload will be discarded and an error will be returned.
 
-### Product Number Fields *
+### Product Number Fields
 
 | F2W  | W2F  | Field Name             | Format   | Example       |
 | ---- | ---- | ---------------------- | -------- | ------------- |
