@@ -1,5 +1,6 @@
 # Easy-Link V2 - Handling Errors
 
+## Overview
 When handling data that traverses multiple systems, having accurate error messages that pin-point the true source of error is invaluable. This document intends to define what errors may occur while trying to submit an API request, as well as what course of action should be taken for each 'type' or error.
 
 There are four primary groups of errors: improper payloads that will fail prior to receipt by the API, validation errors that occur after the API has received the payload but prior to being submitted to the WMS staging table, validation errors that occur after reaching the staging table but prior to being processed into the WMS, and finally, correctness errors that aren't caught by any automated systems and will result in improper material movement if not caught by a human check.
