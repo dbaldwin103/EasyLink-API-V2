@@ -13,10 +13,10 @@
 > > [Ship From Fields](#ship-from-fields)<br/>
 >
 > [Line Item Fields](#line-item-fields)
-> > [Record Fields](#record-fields)<br/>
-> > [Product Number Fields](#product-number-fields)<br/>
-> > [General Fields](#general-fields)<br/>
-> > [Status and Attribute Fields](#status-and-attribute-fields)<br/>
+> > [Record Fields](#record-fields-line)<br/>
+> > [Product Number Fields](#product-number-fields-line)<br/>
+> > [General Fields](#general-fields-line)<br/>
+> > [Status and Attribute Fields](#status-and-attribute-fields-line)<br/>
 
 ## Overview
 
@@ -159,7 +159,7 @@ The **ShipFrom** fields let us know the material's origin of shipment. The **Shi
 
 ## Line Item Fields
 
-### Record Fields
+### Record Fields (line)
 
 | F2W  | W2F  | Field Name        | Format     | Example |
 | ---- | ---- | ----------------- | ---------- | ------- |
@@ -167,17 +167,7 @@ The **ShipFrom** fields let us know the material's origin of shipment. The **Shi
 
 The **RecordLine_Number** is a required field that allows you to reference the line item in *update* and *get* calls. Each value must be unique to the order, meaning two lines could not both have a *RecordLine_Number* of '1'. If this occurs, the payload will be discarded and an error will be returned.
 
-### Product Number Fields
-
-| F2W  | W2F  | Field Name             | Format   | Example       |
-| ---- | ---- | ---------------------- | -------- | ------------- |
-| +    | +    | ProductNumber_Rinchem  | Text(25) | 12345_EXAMPLE |
-| +    | +    | ProductNumber_Owner    | Text(25) | OWN1234       |
-| +    | +    | ProductNumber_Supplier | Text(25) | SUP1234       |
-
-The **ProductNumber** fields specify the part number of the product that is being shipped. Any of the three may be sent in, if any of them are found, the other 2 will be populated base on our alias table. If none of them are found, the payload will be discarded and an error will be returned.
-
-### General Fields
+### General Fields (line)
 
 | F2W  | W2F  | Field Name          | Format     | Example |
 | ---- | ---- | ------------------- | ---------- | ------- |
@@ -196,7 +186,17 @@ The **ProductNumber** fields specify the part number of the product that is bein
 
 **AdditionalComments** is used to store any additional information pertaining to this line of material that we didn't explicitly provide a field for. It currently lives exclusively on Salesforce and will not appear on any forms.
 
-### Status and Attribute Fields
+### Product Number Fields (line)
+
+| F2W  | W2F  | Field Name             | Format   | Example       |
+| ---- | ---- | ---------------------- | -------- | ------------- |
+| +    | +    | ProductNumber_Rinchem  | Text(25) | 12345_EXAMPLE |
+| +    | +    | ProductNumber_Owner    | Text(25) | OWN1234       |
+| +    | +    | ProductNumber_Supplier | Text(25) | SUP1234       |
+
+The **ProductNumber** fields specify the part number of the product that is being shipped. Any of the three may be sent in, if any of them are found, the other 2 will be populated base on our alias table. If none of them are found, the payload will be discarded and an error will be returned.
+
+### Status and Attribute Fields (line)
 
 | F2W  | W2F  | Field Name                 | Format   | Example            |
 | ---- | ---- | -------------------------- | -------- | ------------------ |
