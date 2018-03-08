@@ -1,4 +1,4 @@
-# Easy-Link V2 - Easy Link API
+# Easy-Link V2 - Sending Requests
 
 ## Overview
 
