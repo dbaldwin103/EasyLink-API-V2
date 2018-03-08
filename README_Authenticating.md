@@ -13,8 +13,6 @@ To retrieve your *Access Token* And *Instance Url* an **HTTP 'POST'** request ne
 
 Once you have the vanilla **'POST'** call setup, you will need to provide your credentials in the form of **URL Parameters**. The key -> value mapping for these parameters is provided below. 
 
-Your Rinchem contact should have provided you with the proper *username*, *consumer_key*, and *consumer_secret* to use. You will be responsible for setting up *your_password* and resetting your *security_token*. Instructions to reset your *security_token* may be found here, https://help.salesforce.com/articleView?id=user_security_token.htm&type=5
-
 | Key           | Value                                |
 | ------------- | ------------------------------------ |
 | grant_type    | password                             |
@@ -22,6 +20,24 @@ Your Rinchem contact should have provided you with the proper *username*, *consu
 | client_secret | <your_consumer_secret>               |
 | username      | <your_username>                      |
 | password      | <your_password><your_security_token> |
+
+Your Rinchem contact should have provided you with the proper *username*, *consumer_key*, and *consumer_secret* to use. You will be responsible for setting up *your_password* and resetting your *security_token*. Instructions to reset your *security_token* may be found here, https://help.salesforce.com/articleView?id=user_security_token.htm&type=5. If you have any issues with your credentials or with resetting your security token, please let your Rinchem contact know.
+
+### HTTP Example
+
+```
+POST /services/oauth2/token?
+	grant_type=password&amp;
+	client_id=<your_client_id>&amp;
+	client_secret=<your_client_secret>&amp;
+	username=<your_username>&amp;
+	password=<your_password><your_security_token> HTTP/1.1
+Host: <your_endpoint>
+Cache-Control: no-cache
+Content-Type: multipart/form-data;
+```
+
+Note: Everything between *POST* and Host should be on one line, they have been split apart for readability.
 
 ## Successful Credentials Response
 
