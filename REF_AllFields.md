@@ -14,8 +14,8 @@
 >
 > [Line Item Fields](#line-item-fields)
 > > [Record Fields](#record-fields-line)<br/>
-> > [Product Number Fields](#product-number-fields-line)<br/>
 > > [General Fields](#general-fields-line)<br/>
+> > [Product Number Fields](#product-number-fields-line)<br/>
 > > [Status and Attribute Fields](#status-and-attribute-fields-line)<br/>
 
 ## Overview
