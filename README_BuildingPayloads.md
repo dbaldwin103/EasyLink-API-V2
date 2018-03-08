@@ -15,8 +15,6 @@ Building the payload may be the most critical step in the API process. This is w
   - A list of all available and required fields may be found in the ***REF_AllFields.md*** file.
   - Example minimum and full payloads may also be seen in the ***REF_PayloadExamples.md*** file.
 
-
-
 ### Simplified Payload
 
 ```json
