@@ -2,7 +2,7 @@
 
 ## Overview
 
-At this point you should have already already:
+At this point you should have already:
 
 -  Gone through the authentication process and retrieved an *access_token* and *instance_url*. 
   - If you haven't please see the [*README_Authenticating.md*](README_Authenticating.md)
