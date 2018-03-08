@@ -1,7 +1,5 @@
 # Rinchem Easy-Link API Integration 
 
-#### Table Of Contents
-
 ## Overview
 
 Rinchem is committed to making the API integration process straightforward, reliable, and transparent. Over time, we will build a robust platform that will allow you to submit orders, review your history, and generate reports. Initially our API platform will be available for **Facility To Warehouse (F2W)** requests and **Warehouse To Facility (W2F)** requests.
