@@ -4,7 +4,7 @@
 
 At this point you should have already already:
 
--  Gone through the authentication process and retrieved the *access_token* and *instance_url*. 
+-  Gone through the authentication process and retrieved an *access_token* and *instance_url*. 
   - If you haven't please see the [*README_Authenticating.md*](README_Authenticating.md)
 - Created your json body that contains the information you would like sent to Rinchem.
   - If you haven't please see the [*README_BuildingPayloads.md*](README_BuildingPayloads.md)
