@@ -5,29 +5,35 @@
 > [Overview](#overview)
 >
 > [README Files](#readme-files)
-> > [README_Authenticating.md](#readme_authenticatingmd)<br/>
-> > [README_BuildingPayloads.md](#readme_buildingpayloadsmd)<br/>
-> > [README_SendingRequests.md](#readme_sendingrequestsmd)<br/>
+> > [README_Authenticating](#readme_authenticatingmd)<br/>
+> > [README_BuildingPayloads](#readme_buildingpayloadsmd)<br/>
+> > [README_SendingRequests](#readme_sendingrequestsmd)<br/>
+> > [README_HandlingErrors](#readme_handlingerrorsmd)<br/>
 >
 > [REF Files](#ref-files)
-> > [REF_PostmanWalkthrough.md](#ref_postmanwalkthroughmd)<br/>
-> > [REF_AllFields.md](#ref_allfieldsmd)<br/>
-> > [REF_PayloadExamples.md](#ref_payloadexamplesmd)<br/>
-> > [REF_PicklistValues.md](#ref_picklistvaluesmd)<br/>
+> > [REF_PostmanWalkthrough](#ref_postmanwalkthroughmd)<br/>
+> > [REF_AllFields](#ref_allfieldsmd)<br/>
+> > [REF_PayloadExamples](#ref_payloadexamplesmd)<br/>
+> > [REF_PicklistValues](#ref_picklistvaluesmd)<br/>
 
 ## Overview
 
-Rinchem is committed to making the API integration process straightforward, reliable, and transparent. Over time, we will build a robust platform that will allow you to submit orders, review your history, and generate reports. Initially our API platform will be available for **Facility To Warehouse (F2W)** requests and **Warehouse To Facility (W2F)** requests.
+Rinchem is committed to making the API integration process straightforward, reliable, and transparent. Over time, we will build a robust platform that will allow you to submit orders, review your history, and generate reports. Initially our API platform will be available for **Inbound Order** and **Outbound Order** requests.
 
-There are three major steps in connecting to our API: 
+> The **Inbound** request will encompass both material *Returns* **and** *Advanced Shipping Notices*. Anything leaving your facility and arriving at a Rinchem warehouse would be considered an inbound order.
+>
+> The **Outbound** request will encompass any request for material to leave a Rinchem warehouse and arrive at your facility.
+
+There are four major steps in connecting to our API: 
 
 1. ***Authenticating Your Credentials***
 2. ***Building Your Payload*** 
-3. ***Sending Your Request***. 
+3. ***Sending Your Request***
+4. ***Handling Errors***
 
 Each of these steps are described briefly below. They each also have there own dedicated **README** file in order to help break up the information for you. Along with the individual README files, there are also a few ***REF*** files to aid your path to integration.
 
-Though each file is standalone and they can be read out of order, we do recommend you read the entirety of this file first, then read through ***README_Authenticating***, ***README_BuildingPayloads***, and ***README_SendingRequests***; in that order. We also highly recommend you follow along with the ***REF_PostmanWalkthrough.md*** prior to starting.
+Though each file is standalone and they can be read out of order, we do recommend you read the entirety of this file first, then read through ***README_Authenticating***, ***README_BuildingPayloads***, and ***README_SendingRequests***; in that order. We also highly recommend you follow along with the ***REF_PostmanWalkthrough*** prior to starting.
 
 
 
@@ -35,23 +41,27 @@ Though each file is standalone and they can be read out of order, we do recommen
 
 ### [README_Authenticating.md](README_Authenticating.md)
 
-The first step in connecting to our API is proving to Salesforce that you are the user that you claim to be. This is done by passing your user credentials to a generic *Salesforce API* that will then pass back an ***instance_url*** and and ***access_token*** that can then be used to access the *EasyLink API*.
+The first step in connecting to our API is proving to *Chem-Star* that you are the user that you claim to be. This is done by passing your user credentials to a generic *Salesforce API* that will then pass back an ***instance_url*** and and ***access_token*** that can then be used to access the *EasyLink API*.
 
-This file walks you through setting up the call and explains how to handle the response(s) you may receive.
+This file walks you through setting up the authentication call and explains how to handle the response(s) you may receive.
 
 ### [README_BuildingPayloads.md](README_BuildingPayloads.md)
 
-The second step in connect to our API is going to be converting your data into a payload that our system can understand. 
+The second step in connecting to our API is going to be converting your data into a payload that our system can understand.  
 
 This file is going to explain the payload structure as well as discuss some design considerations to think about before you start building.
 
 ### [README_SendingRequests.md](README_SendingRequests.md)
 
-The final step in connecting to our API is going to be combining the credentials you received from the *Authenticating* phase and the payload that you built during the *BuildingPayloads* phase into one request that you can send Rinchem for processing. 
+The third step in connecting to our API is going to be combining the credentials you received from the *Authenticating* phase and the payload that you built during the *BuildingPayloads* phase into one request that you can send Rinchem for processing. 
 
-This file is going to explain how to set up the request depending on whether you want to send a new payload, update a prior payload, or cancel a payload entirely. It is also going to explain the errors and responses that you may see come back after sending the request and how you might go about handling/resolving them.
+This file is going to explain how to set up the request depending on whether you want to send a new payload, update a prior payload, or cancel a payload entirely. It is also going to explain the successful responses that you can expect to see after sending the request..
 
+### [README_HandlingErrors.md](README_HandlingErrors.md)
 
+The final step in connecting to the Easy-Link API is going to be handling the response when things don't quite go as plan. There are four types of errors that can occur while the payload is traversing our system. 
+
+This file is going to explain the format for each type of error response. It is also going to explain the separation of due diligence between an error that must be corrected by the requester, versus an error that may need to be corrected by Rinchem.
 
 ## REF Files
 
