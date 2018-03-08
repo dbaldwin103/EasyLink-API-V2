@@ -2,15 +2,15 @@
 
 #### Table of Contents
 
-> [Minimum F2W Payload](#minimum-facility-to-warehouse-f2w-payload)<br/>
-> [Minimum W2F Payload](#minimum-warehouse-to-facility-w2f-payload)<br/>
-> [Full F2W Payload](#full-f2w-payload)<br/>
-> [Full W2F Payload](#full-w2f-payload)<br/>
+> [Minimum Inbound Payload](#minimum-inbound-payload)<br/>
+> [Minimum Outbound Payload](#minimum-outbound-payload)<br/>
+> [Full Inbound Payload](#full-inbound-payload)<br/>
+> [Full Outbound Payload](#full-outbound-payload)<br/>
 > [Full Generic Payload](#full-generic-payload)<br/>
 
 
 
-## Minimum Facility To Warehouse (F2W) Payload
+## Minimum Inbound Payload
 
 ```json
 {
@@ -44,7 +44,7 @@
 }
 ```
 
-## Minimum Warehouse To Facility (W2F) Payload
+## Minimum Outbound Payload
 
 ```json
 {
@@ -78,7 +78,7 @@
 }
 ```
 
-## Full F2W Payload
+## Full Inbound Payload
 
 ```json
 {
@@ -150,7 +150,7 @@
 }
 ```
 
-## Full W2F Payload
+## Full Outbound Payload
 
 ```json
 {
