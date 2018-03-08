@@ -1,6 +1,6 @@
 # Easy-Link V2 - Easy Link API
 
-## The Rinchem API Call
+## Overview
 
 At this point you should have already already:
 
@@ -11,7 +11,7 @@ At this point you should have already already:
 
 If you have completed these items, then you are ready to call the EasyLink API. The overall format of the API call is shown below.
 
-### HTTP Example
+#### HTTP Example
 
 ```http
 <your_verb> <your_api_suffix> HTTP/1.1
@@ -25,24 +25,66 @@ Content-Type: application/json
 
 ***your_verb*** will let Rinchem know what we should do with your payload.  
 
->**POST** should be used for any new payloads. It will add a record to Rinchem's system.
->**PATCH** should be used to update or cancel a prior payload. It will modify a record in Rinchem's system.
->**GET** should be used to retrieve a record from Rinchem's system.
+>**POST** should be used for any *new* payloads. It will add a record to Rinchem's system.
+>**PATCH** should be used to *update* or *cancel* a prior payload. It will modify a record in Rinchem's system.
+>**GET** should be used to *retrieve* a record from Rinchem's system.
 
-***your_api_suffix*** will let Rinchem know what type of request you are about to send, either a Facility To Warehouse (F2W) or a Warehouse To Facility (W2F).
+***your_api_suffix*** will let Rinchem know what type of request you are about to send, either an *Inbound* or an *Outbound* order.
 
-> **/services/apexrest/v1/W2F** - will let us know your request is referencing a Warehouse To Facility record.
-> **/services/apexrest/v1/F2W** - will let us know your request is referencing a Facility To Warehouse record.
+> **/services/apexrest/v1/outbound** - will let us know your request is referencing an Outbound record.
+> **/services/apexrest/v1/inbound** - will let us know your request is referencing an Inbound record.
 
-***your_instance_url*** and ***your_access_token*** should have been retrieved and stored during the authentication process. ***your_json_body*** should have been created during the building payloads process.
+***your_instance_url*** and ***your_access_token*** should have been retrieved and stored during the authentication process. 
 
-Depending on the Verb request type the response(s) you receive may vary.
+***your_json_body*** should have been created during the building payloads process.
 
 
 
 ## POST (new)
 
-A post call will try to create a new record in Salesforce. If the authentication tokens are still valid and the JSON content body is valid, a response will be returned with the following "success" detail:
+A post call will try to create a new record in Salesforce. It doesn't require any additional parameters to be passed in, it simply requires the payload. For example:
+
+```http
+POST <your_api_suffix> HTTP/1.1
+Host: <your_instance_url>
+Authorization: Bearer <your_access_token>
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Request" : 
+    {
+        "OwnerCode" : "OWN",
+        "SupplierCode" : "SUP",
+        "DesiredDeliveryDate" : "10-22-2018",
+        "Freight_CarrierService" : "RINCHEM",
+        "Freight_BillTo_Type" : "Requester",
+        "Freight_IsInternational" : "FALSE",
+        "ShipFrom_WarehouseCode" : "11",
+        "ShipTo_Name" : "John Doe",
+        "ShipTo_Street1" : "123 Example Street",
+        "ShipTo_City" : "Albuquerque",
+        "ShipTo_State" : "NM",
+        "ShipTo_PostalCode" : "87109",
+        "ShipTo_Country" : "USA",
+    	
+        "LineItems" : 
+        [
+            {
+                "Record_LineNumber" : 1,
+                "ProductNumber_Owner" : "OWN1234",
+                "LotNumber" : "12345",
+                "Quantity" : 5,
+                "UnitOfMeasure" : "BOTTLE" 
+            },
+        ]
+    }
+}
+```
+
+
+
+If the authentication tokens are still valid and the JSON content body is valid, a response will be returned with the following "success" detail:
 
 ```
 {
@@ -84,11 +126,21 @@ Content-Type: application/json
 }
 ```
 
-Note: **Fields may not be updated to *null*!** Any field that needs a value removed should be assigned an empty string.
+**Note: Fields may not be updated to *null*! Any field that needs a value removed should be assigned an empty string!!!**
+
+If the authentication tokens are still valid and the JSON content body is valid, a response will be returned with the following "success" detail:
+
+```
+{
+    "status":"Success",
+    "message":"Your request has been updated successfully", 
+    "record_name" : <your_record_name>
+}
+```
 
 ### Cancel
 
-A *PATCH Cancel* call does not need to send any payload! Simply one of the record names and action cancel. For example:
+A *PATCH Cancel* call does not need to send any payload! It simply requires the 2 parameters; one of the record names and Action=Cancel.  For example:
 
 ```http
 PATCH <your_api_suffix>?Record_ExternalName=<your_record_external_name>&amp;Action=Cancel HTTP/1.1
@@ -98,7 +150,31 @@ Accept: application/json
 Content-Type: application/json
 ```
 
- 
+Note: Cancels are not reversible, if for some reason the order shouldn't have been cancelled the full payload will need to be sent again.  
+
+If the authentication tokens are still valid and the request is valid, a response will be returned with the following "success" detail:
+
+```
+{
+    "status":"Success",
+    "message":"Your request has been cancelled successfully", 
+    "record_name" : <your_record_name>
+}
+```
+
+### Cancel and Update Time Frame
+
+Cancels and updates may only be processed while the order is still in the staging status in our warehouse management system. If the order has moved past that status, your *PATCH* request will return a failed response with the following detail:
+
+```
+{
+    "status":"Fail",
+    "message":"We were unable to handle your PATCH request due to the current status of your order. If this is an issue please reach out to your Rinchem contact.", 
+    "record_name" : <your_record_name>
+}
+```
+
+
 
 ## GET
 
@@ -114,3 +190,14 @@ Accept: application/json
 Content-Type: application/json
 ```
 
+A successful *GET* call will return the following "Success" detail:
+
+```
+{
+    "status":"Success",
+    "message":"Your record has been retrieved successfully", 
+    "record" : <your_record_payload>
+}
+```
+
+***your_record_payload*** will be in the same format as the payload you sent in. 
