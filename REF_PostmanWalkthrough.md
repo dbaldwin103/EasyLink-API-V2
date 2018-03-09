@@ -1,3 +1,3 @@
-# Easy-Link V2 - Sending Requests
+# Easy-Link V2 - Postman Walkthrough
 
 ## COMING SOON
