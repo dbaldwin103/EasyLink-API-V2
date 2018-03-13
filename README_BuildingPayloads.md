@@ -17,22 +17,22 @@ Building the payload may be the most critical step in the API process. This is w
 
 ```json
 {
-	"Freight_CarrierService" : "RINCHEM",
-	"ShipFrom_WarehouseCode" : "16",
-	"ShipTo_Street1" : "123 Secure Drive",
-	"OwnerCode" : "RINCHEM",
-	"SupplierCode" : "EXA",
+    "Freight_CarrierService" : "RINCHEM",
+    "ShipFrom_WarehouseCode" : "16",
+    "ShipTo_Street1" : "123 Secure Drive",
+    "OwnerCode" : "RINCHEM",
+    "SupplierCode" : "EXA",
 
-	"LineItems" : 
-	[
-		{
-		"RecordLine_Name" : "1",
-		"Quantity" : "4",
-		"ProductNumber_Rinchem" : "101234_EXA",
-		"UnitOfMeasure" : "BOTTLE",
-		"LotNumber" : "M6G162MP",
-	    }
-	]
+    "LineItems" : 
+    [
+        {
+            "RecordLine_Name" : "1",
+            "Quantity" : "4",
+            "ProductNumber_Rinchem" : "101234_EXA",
+            "UnitOfMeasure" : "BOTTLE",
+            "LotNumber" : "M6G162MP",
+        }
+    ]
 }
 ```
 
