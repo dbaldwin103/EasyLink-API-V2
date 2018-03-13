@@ -52,33 +52,30 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "Request" : 
-    {
-        "OwnerCode" : "OWN",
-        "SupplierCode" : "SUP",
-        "DesiredDeliveryDate" : "10-22-2018",
-        "Freight_CarrierService" : "RINCHEM",
-        "Freight_BillTo_Type" : "Requester",
-        "Freight_IsInternational" : "FALSE",
-        "ShipFrom_WarehouseCode" : "11",
-        "ShipTo_Name" : "John Doe",
-        "ShipTo_Street1" : "123 Example Street",
-        "ShipTo_City" : "Albuquerque",
-        "ShipTo_State" : "NM",
-        "ShipTo_PostalCode" : "87109",
-        "ShipTo_Country" : "USA",
-    	
-        "LineItems" : 
-        [
-            {
-                "Record_LineNumber" : 1,
-                "ProductNumber_Owner" : "OWN1234",
-                "LotNumber" : "12345",
-                "Quantity" : 5,
-                "UnitOfMeasure" : "BOTTLE" 
-            },
-        ]
-    }
+    "OwnerCode" : "OWN",
+    "SupplierCode" : "SUP",
+    "DesiredDeliveryDate" : "10-22-2018",
+    "Freight_CarrierService" : "RINCHEM",
+    "Freight_BillTo_Type" : "Requester",
+    "Freight_IsInternational" : "FALSE",
+    "ShipFrom_WarehouseCode" : "11",
+    "ShipTo_Name" : "John Doe",
+    "ShipTo_Street1" : "123 Example Street",
+    "ShipTo_City" : "Albuquerque",
+    "ShipTo_State" : "NM",
+    "ShipTo_PostalCode" : "87109",
+    "ShipTo_Country" : "USA",
+    
+    "LineItems" : 
+    [
+        {
+            "Record_LineNumber" : 1,
+            "ProductNumber_Owner" : "OWN1234",
+            "LotNumber" : "12345",
+            "Quantity" : 5,
+            "UnitOfMeasure" : "BOTTLE" 
+        }
+    ]
 }
 ```
 
@@ -109,7 +106,7 @@ Two url parameters are required to send a *PATCH* call:
 
 ### Update
 
-A *P*ATCH *Update* call does not need to send the full payload! If only the *DesiredDeliveryDate* needs to be modified, then only that field needs to be sent. For example:
+A *PATCH Update* call does not need to send the full payload! If only the *DesiredDeliveryDate* needs to be modified, then only that field needs to be sent. For example:
 
 ```http
 PATCH <your_api_suffix>?Record_Name=<your_record_name>&amp;Action=Update HTTP/1.1
@@ -119,10 +116,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-	"Request":
-	{
-        "DesiredDeliverDate": "11-04-2018"
-	}
+    "DesiredDeliverDate": "11-04-2018"
 }
 ```
 
