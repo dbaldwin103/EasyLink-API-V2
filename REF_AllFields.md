@@ -209,11 +209,11 @@ The **Record_LineNumber** is a required field that allows you to reference the l
 
 ### Product Number Fields (line)
 
-| Inbound | Outbound | Field Name             | Format   | Example       |
-| ------- | -------- | ---------------------- | -------- | ------------- |
-| +       | +        | ProductNumber_Rinchem  | Text(25) | 12345_EXAMPLE |
-| +       | +        | ProductNumber_Owner    | Text(25) | OWN1234       |
-| +       | +        | ProductNumber_Supplier | Text(25) | SUP1234       |
+| Inbound | Outbound | Field Name                 | Format   | Example       |
+| ------- | -------- | -------------------------- | -------- | ------------- |
+| +       | +        | Product_RinchemPartNumber  | Text(25) | 12345_EXAMPLE |
+| +       | +        | Product_OwnerPartNumber    | Text(25) | OWN1234       |
+| +       | +        | Product_SupplierPartNumber | Text(25) | SUP1234       |
 
 The **ProductNumber** fields specify the part number of the product that is being shipped. Any, and at least one, of the three must be sent in. If any of the three are found, the other two will be populated based on our alias table. If none of them are found, an error case will be created and manual intervention will be required.
 
