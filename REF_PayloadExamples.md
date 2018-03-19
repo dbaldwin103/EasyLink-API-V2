@@ -32,7 +32,7 @@
     [
         {
             "Record_LineNumber" : 1,
-            "ProductNumber_Owner" : "OWN1234",
+            "Product_OwnerPartNumber" : "OWN1234",
             "LotNumber" : "12345",
             "Quantity" : 5,
             "UnitOfMeasure" : "BOTTLE" 
@@ -63,7 +63,7 @@
     [
         {
             "Record_LineNumber" : 1,
-            "ProductNumber_Owner" : "OWN1234",
+            "Product_OwnerPartNumber" : "OWN1234",
             "LotNumber" : "12345",
             "Quantity" : 5,
             "UnitOfMeasure" : "BOTTLE" 
@@ -121,9 +121,9 @@
     [
         {
             "Record_LineNumber" : 1,
-            "ProductNumber_Owner" : "OWN1234",
-            "ProductNumber_Supplier" : "SUP1234",
-            "ProductNumber_Rinchem" : "1234_EXAMPLE",
+            "Product_OwnerPartNumber" : "OWN1234",
+            "Product_SupplierPartNumber" : "SUP1234",
+            "Product_RinchemPartNumber" : "1234_EXAMPLE",
             "Quantity" : 5,
             "LotNumber" : "12345A",
             "SerialNumber" : "54321A",
@@ -190,9 +190,9 @@
     [
         {
             "Record_LineNumber" : 1,
-            "ProductNumber_Owner" : "OWN1234",
-            "ProductNumber_Supplier" : "SUP1234",
-            "ProductNumber_Rinchem" : "1234_EXAMPLE",
+            "Product_OwnerPartNumber" : "OWN1234",
+            "Product_SupplierPartNumber" : "SUP1234",
+            "Product_RinchemPartNumber" : "1234_EXAMPLE",
             "Quantity" : 5,
             "LotNumber" : "12345A",
             "UnitOfMeasure" : "BOTTLE",
@@ -262,9 +262,9 @@
     [
         {
             "Record_LineNumber" : ,
-            "ProductNumber_Owner" : "",
-            "ProductNumber_Supplier" : "",
-            "ProductNumber_Rinchem" : "",
+            "Product_OwnerPartNumber" : "",
+            "Product_SupplierPartNumber" : "",
+            "Product_RinchemPartNumber" : "",
             "Quantity" : ,
             "LotNumber" : "",
             "SerialNumber" : "",
