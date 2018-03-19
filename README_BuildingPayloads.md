@@ -28,7 +28,7 @@ Building the payload may be the most critical step in the API process. This is w
         {
             "RecordLine_Name" : "1",
             "Quantity" : "4",
-            "ProductNumber_Rinchem" : "101234_EXA",
+            "Product_RinchemPartNumber" : "101234_EXA",
             "UnitOfMeasure" : "BOTTLE",
             "LotNumber" : "M6G162MP",
         }
