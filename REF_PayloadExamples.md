@@ -16,10 +16,12 @@
 {
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
-    "EstimatedShipDate" : "10-22-2018",
+    "EstimatedShipDate" : "2018-10-22",
+    "PurchaseOrderNumber" : "A12345",
     "Freight_CarrierService" : "RINCHEM",
     "Freight_BillTo_Type" : "Requester",
-    "Freight_IsInternationalShipment" : "FALSE",
+    "Freight_BillTo_Name" : "John Doe",
+    "Freight_IsInternationalShipment" : false,
     "ShipTo_WarehouseCode" : "11",
     "ShipFrom_Name" : "John Doe",
     "ShipFrom_Street1" : "123 Example Street",
@@ -36,7 +38,7 @@
             "LotNumber" : "12345",
             "Quantity" : 5,
             "UnitOfMeasure" : "BOTTLE" 
-        },
+        }
     ]
 }
 ```
@@ -47,10 +49,12 @@
 {
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
-    "DesiredDeliveryDate" : "10-22-2018",
+    "DesiredDeliveryDate" : "2018-10-22",
+    "PurchaseOrderNumber" : "A12345",
     "Freight_CarrierService" : "RINCHEM",
     "Freight_BillTo_Type" : "Requester",
-    "Freight_IsInternationalShipment" : "FALSE",
+    "Freight_BillTo_Name" : "John Doe",
+    "Freight_IsInternationalShipment" : false,
     "ShipFrom_WarehouseCode" : "11",
     "ShipTo_Name" : "John Doe",
     "ShipTo_Street1" : "123 Example Street",
@@ -67,7 +71,7 @@
             "LotNumber" : "12345",
             "Quantity" : 5,
             "UnitOfMeasure" : "BOTTLE" 
-        },
+        }
     ]
 }
 ```
@@ -79,7 +83,7 @@
     "Record_ExternalName" : "EXA12345",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
-    "EstimatedShipDate" : "10-22-2018",
+    "EstimatedShipDate" : "2018-10-22",
     "PurchaseOrderNumber" : "PO1234",
     "AdditionalOrderNumber" : "ADDITIONAL1234",
     "AdditionalShipmentComments" : "This is a test payload",
@@ -103,7 +107,7 @@
     "Freight_BillTo_State" : "NM",
     "Freight_BillTo_PostalCode" : "87109",
     "Freight_BillTo_Country" : "USA",
-    "Freight_IsInternationalShipment" : "FALSE",
+    "Freight_IsInternationalShipment" : false,
     "Freight_InternationalShipment_ImporterOfRecord" : "",
     "Freight_MethodOfTransport" : "GROUND",
     "ShipTo_WarehouseCode" : "11",
@@ -148,7 +152,7 @@
     "Record_ExternalName" : "EXA12345",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
-    "EstimatedShipDate" : "10-22-2018",
+    "EstimatedShipDate" : "2018-10-22",
     "PurchaseOrderNumber" : "PO1234",
     "AdditionalOrderNumber" : "ADDITIONAL1234",
     "AdditionalShipmentComments" : "This is a test payload",
@@ -172,7 +176,7 @@
     "Freight_BillTo_State" : "NM",
     "Freight_BillTo_PostalCode" : "87109",
     "Freight_BillTo_Country" : "USA",
-    "Freight_IsInternationalShipment" : "FALSE",
+    "Freight_IsInternationalShipment" : false,
     "Freight_InternationalShipment_ImporterOfRecord" : "",
     "Freight_MethodOfTransport" : "GROUND",
     "ShipTo_WarehouseCode" : "11",
