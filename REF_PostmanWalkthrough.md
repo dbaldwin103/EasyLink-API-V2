@@ -34,7 +34,7 @@ From the response we are going to use the *instance_url* and the *access_token* 
 
 ![52156467529](/Resources/1521564675295.png)
 
-### 4. Building The Payload
+### 4. Setting Up The Payload
 
 Now that we have the general format set up, we now need to add the actual data that we want to send. This will be done under the **Body** tab. For this example, I'll simply be using the minimum permissible payload, however for a full list of available fields, please see the  [***REF_AllFields.md***](REF_AllFields.md) and/or [***REF_PayloadExamples.md***](REF_PayloadExamples.md) files. 
 
