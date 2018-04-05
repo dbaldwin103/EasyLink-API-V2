@@ -30,7 +30,7 @@ If successful we have now proved to Chem-star/Salesforce that we are a legitimat
 
 ### 3. Setting Up The Easy-Link Call
 
-From the response we are going to use the *instance_url* and the *access_token* to build a new *HTTP* request to send data to Rinchem. Once again we are going to be building a *POST* request. Our endpoint URL is going to be the *instance_url* along with the suffix for the functionality that we want to use. In this particular example we will be sending an outbound order and thus will use the suffix */services/apexrest/v1/outbound*. We will also need to set an *Authorization* **Header** that will house our *access_token*. Overall, our set up should currently look something like this.
+From the response we are going to use the *instance_url* and the *access_token* to build a new *HTTP* request to send data to Rinchem. Once again we are going to be building a *POST* request. Our endpoint URL is going to be the *instance_url* along with the suffix for the functionality that we want to use. In this particular example we will be sending an outbound order and thus will use the suffix */services/apexrest/v2/outbound*. We will also need to set an *Authorization* **Header** that will house our *access_token*. Overall, our set up should currently look something like this.
 
 ![52156467529](/Resources/1521564675295.png)
 
