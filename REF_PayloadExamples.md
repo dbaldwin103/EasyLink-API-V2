@@ -215,6 +215,7 @@
     "OwnerCode" : "",
     "SupplierCode" : "",
     "EstimatedShipDate" : "",
+    "DesiredDeliveryDate" : "",
     "PurchaseOrderNumber" : "",
     "AdditionalOrderNumber" : "",
     "AdditionalShipmentComments" : "",
