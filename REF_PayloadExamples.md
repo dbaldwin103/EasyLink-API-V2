@@ -152,7 +152,7 @@
     "Record_ExternalName" : "EXA12345",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
-    "EstimatedShipDate" : "2018-10-22",
+    "DesiredDeliveryDate" : "2018-10-22",
     "PurchaseOrderNumber" : "PO1234",
     "AdditionalOrderNumber" : "ADDITIONAL1234",
     "AdditionalShipmentComments" : "This is a test payload",
@@ -178,17 +178,17 @@
     "Freight_BillTo_Country" : "USA",
     "Freight_IsInternationalShipment" : false,
     "Freight_InternationalShipment_ImporterOfRecord" : "",
-    "Freight_MethodOfTransport" : "GROUND",
-    "ShipTo_WarehouseCode" : "11",
-    "ShipFrom_Name" : "John Doe",
-    "ShipFrom_Company" : "EXAMPLE CO",
-    "ShipFrom_Street1" : "123 Example Street",
-    "ShipFrom_Street2" : "",
-    "ShipFrom_Street3" : "",
-    "ShipFrom_City" : "Albuquerque",
-    "ShipFrom_State" : "NM",
-    "ShipFrom_PostalCode" : "87109",
-    "ShipFrom_Country" : "USA",
+    "Freight_MethodOfTransport" : "Domestic",
+    "ShipFrom_WarehouseCode" : "11",
+    "ShipTo_Name" : "John Doe",
+    "ShipTo_Company" : "EXAMPLE CO",
+    "ShipTo_Street1" : "123 Example Street",
+    "ShipTo_Street2" : "",
+    "ShipTo_Street3" : "",
+    "ShipTo_City" : "Albuquerque",
+    "ShipTo_State" : "NM",
+    "ShipTo_PostalCode" : "87109",
+    "ShipTo_Country" : "USA",
 
     "LineItems" : 
     [
@@ -202,7 +202,7 @@
             "UnitOfMeasure" : "BOTTLE",
             "PurchaseOrderNumber" : "PO1234",
             "AdditionalComments" : "This is a test line."
-        },
+        }
     ]
 }
 ```
