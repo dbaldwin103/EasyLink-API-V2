@@ -282,7 +282,7 @@
             "Attributes_Process" : "",
             "Attributes_Other" : "",
             "Attributes_ComponentStatus" : ""
-        },
+        }
     ]
 }
 ```
