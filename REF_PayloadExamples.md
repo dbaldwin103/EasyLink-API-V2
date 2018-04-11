@@ -80,7 +80,7 @@
 
 ```json
 {
-    "Record_ExternalName" : "EXA12345",
+    "Record_ExternalName" : "EXA12350",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
     "EstimatedShipDate" : "2018-10-22",
@@ -109,7 +109,7 @@
     "Freight_BillTo_Country" : "USA",
     "Freight_IsInternationalShipment" : false,
     "Freight_InternationalShipment_ImporterOfRecord" : "",
-    "Freight_MethodOfTransport" : "GROUND",
+    "Freight_MethodOfTransport" : "Domestic",
     "ShipTo_WarehouseCode" : "11",
     "ShipFrom_Name" : "John Doe",
     "ShipFrom_Company" : "EXAMPLE CO",
@@ -140,7 +140,7 @@
             "Attributes_Process" : "1272",
             "Attributes_Other" : "IO,PQ",
             "Attributes_ComponentStatus" : "NT"
-        },
+        }
     ]
 }
 ```
