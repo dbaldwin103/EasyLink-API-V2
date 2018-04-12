@@ -80,7 +80,7 @@
 
 ```json
 {
-    "Record_ExternalName" : "EXA12350",
+    "Record_ExternalName" : "EXA_INBOUND_10001",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
     "EstimatedShipDate" : "2018-10-22",
@@ -149,7 +149,7 @@
 
 ```json
 {
-    "Record_ExternalName" : "EXA12345",
+    "Record_ExternalName" : "EXA_OUTBOUND_10001",
     "OwnerCode" : "OWN",
     "SupplierCode" : "SUP",
     "DesiredDeliveryDate" : "2018-10-22",
