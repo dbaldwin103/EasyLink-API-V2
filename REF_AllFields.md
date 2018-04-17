@@ -34,7 +34,7 @@ The ***Format*** column shows the data type that will be accepted by the API.
 
 The ***Inbound*** and ***Outbound*** columns show the availability of the field for the desired request type. 
 > '**+**' signifies that the field is available for use, but not required. 
-> '*****' signifies that the field is both available and required. 
+> '**\***' signifies that the field is both available and required. 
 > '**x**' signifies that the field is not available and will be ignored by the API.
 
 
@@ -126,7 +126,7 @@ The remaining **Freight_BillTo** fields are only applicable if ***Third Party***
 | -- | -- | -------------------------------------- | -------- | ------------------------------|
 | *    | *    | Freight_IsInternationalShipment      | Boolean  | TRUE          |
 | +    | +    | Freight_International_ImporterOfRecord | Text(40) | EXAMPLE OWNER |
-| +    | +    | Freight_MethodOfTransport              | Picklist | OCEAN         |
+| +    | +    | Freight_MethodOfTransport              | Picklist | Domestic         |
 
 **Freight_IsInternationalShipment** lets us know if the shipment will be crossing any international borders. 
 
