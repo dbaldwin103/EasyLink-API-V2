@@ -28,7 +28,7 @@ The ***Format*** column shows the data type that will be accepted by the API.
 
 > **Text(X)** signifies that any ascii character string with *X* characters or less will be accepted.
 > **Integer(X)** signifies that any whole numerical value with *X* digits or less will be accepted.
-> **Date** signifies that any date in the format of '**mm-dd-yyyy**' will be accepted.
+> **Date** signifies that any date in the format of '**yyyy-mm-dd**' will be accepted.
 > **Boolean** signifies that either 'true' or 'false' should be provided.
 > **Picklist** signifies that this is not a free-form field and certain Rinchem approved values must be provided. Look to the description text to find more information about the acceptable values.
 
@@ -58,8 +58,8 @@ The **Record_ExternalName** on the other hand is a user created unique id/name. 
 | ------- | -------- | -------------------------- | --------- | -------------- |
 | *       | \*       | OwnerCode                  | Picklist  | RIN            |
 | \*      | \*       | SupplierCode               | Picklist  | RIN            |
-| x       | \*       | DesiredDeliveryDate        | Date      | 10-22-2018     |
-| \*      | x        | EstimatedShipDate          | Date      | 08-26-2018     |
+| x       | \*       | DesiredDeliveryDate        | Date      | 2018-10-22     |
+| \*      | x        | EstimatedShipDate          | Date      | 2018-10-22     |
 | +       | +        | PurchaseOrderNumber        | Text(50)  | PO1234         |
 | +       | +        | AdditionalOrderNumber      | Text(50)  | ADDITIONAL1234 |
 | +       | +        | AdditionalShipmentComments | Text(255) |                |
