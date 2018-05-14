@@ -46,7 +46,7 @@ The ***Inbound*** and ***Outbound*** columns show the availability of the field 
 | Inbound | Outbound | Field Name          | Format   | Example   |
 | ------- | -------- | ------------------- | -------- | --------- |
 | +       | +        | Record_Name         | Text(25) | IMP000015 |
-| +       | +        | Record_ExternalName | Text(25) | 1234EXA   |
+| +       | +        | Record_ExternalName | Text(120) | 1234EXA   |
 
 The **Record_Name** is a Salesforce generated value that will be returned upon successful order creation. It may be stored and used to reference the order for any *patch* or *get* requests, however, **should not be included in any *POST* requests**.
 
@@ -196,7 +196,7 @@ The **Record_LineNumber** is a required field that allows you to reference the l
 | *       | *        | LotNumber           | Text(20)   | 12345   |
 | +       | x        | SerialNumber        | Text(50)   | 54321   |
 | *       | *        | UnitOfMeasure       | Picklist   | BOTTLE  |
-| +       | +        | PurchaseOrderNumber | Text(25)   | PO1234  |
+| +       | +        | PurchaseOrderNumber | Text(10)   | PO1234  |
 | +       | +        | AdditionalComments  | Text(50)   |         |
 
 **LotNumber** tells us which lot we will be picking/receiving for this request. 
