@@ -33,7 +33,7 @@
     "LineItems" : 
     [
         {
-            "Record_LineNumber" : 1,
+            "RecordLine_Number" : 1,
             "Product_OwnerPartNumber" : "OWN1234",
             "LotNumber" : "12345",
             "Quantity" : 5,
@@ -66,7 +66,7 @@
     "LineItems" : 
     [
         {
-            "Record_LineNumber" : 1,
+            "RecordLine_Number" : 1,
             "Product_OwnerPartNumber" : "OWN1234",
             "LotNumber" : "12345",
             "Quantity" : 5,
@@ -124,7 +124,7 @@
     "LineItems" : 
     [
         {
-            "Record_LineNumber" : 1,
+            "RecordLine_Number" : 1,
             "Product_OwnerPartNumber" : "OWN1234",
             "Product_SupplierPartNumber" : "SUP1234",
             "Product_RinchemPartNumber" : "1234_EXAMPLE",
@@ -193,7 +193,7 @@
     "LineItems" : 
     [
         {
-            "Record_LineNumber" : 1,
+            "RecordLine_Number" : 1,
             "Product_OwnerPartNumber" : "OWN1234",
             "Product_SupplierPartNumber" : "SUP1234",
             "Product_RinchemPartNumber" : "1234_EXAMPLE",
@@ -266,7 +266,7 @@
     "LineItems" : 
     [
         {
-            "Record_LineNumber" : ,
+            "RecordLine_Number" : ,
             "Product_OwnerPartNumber" : "",
             "Product_SupplierPartNumber" : "",
             "Product_RinchemPartNumber" : "",
