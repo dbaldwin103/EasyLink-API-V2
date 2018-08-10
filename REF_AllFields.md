@@ -63,6 +63,9 @@ The **Record_ExternalName** on the other hand is a user created unique id/name. 
 | +       | +        | PurchaseOrderNumber        | Text(50)  | PO1234         |
 | +       | +        | AdditionalOrderNumber      | Text(50)  | ADDITIONAL1234 |
 | +       | +        | AdditionalShipmentComments | Text(255) |                |
+| +       | +        | CustomerField1             | Text(255) |                |
+| +       | +        | CustomerField2             | Text(255) |                |
+| +       | +        | CustomerField3             | Text(255) |                |
 
 The **OwnerCode** specifies the owner of the material at the time the request is sent. If ownership changes after sending, a *PATCH Update* request should be sent. The **SupplierCode** specifies who distributes or manufactures the material. Both *OwnerCode* and *SupplierCode* must match specific values in Rinchem's system. Please ask your Rinchem contact for a list of relevant owner and supplier codes to use.
 
@@ -72,7 +75,7 @@ The **EstimatedShipDate** similarly describes when you expect the material to le
 The **PurchaseOrderNumber** is the purchase order number that pertains to the request. It will travel with the material on the BOL. The *PurchaseOrderNumber* may also be provided at the line item level if necessary. 
 The **AdditionalOrderNumber** may be used to store any secondary order numbers that you would like associated with the request. It will live entirely in *Chem-Star* and will not be passed on to our WMS or appear on any forms.
 
-**AdditionalShipmentComments** may be used for any header level information that you would like stored that we haven't provided a specific field for.  It lives entirely in *Chem-Star* and will not be passed on to our WMS or appear on any forms.
+**AdditionalShipmentComments** and **CustomerField**s may be used for any header level information that you would like stored that we haven't provided a specific field for.  They live entirely in *Chem-Star* and will not be passed on to our WMS or appear on any forms.
 
 ### Contact Fields
 
@@ -184,9 +187,10 @@ The other **ShipFrom** fields should only be used in the case of a F2W request.
 
 | Inbound | Outbound | Field Name        | Format     | Example |
 | ------- | -------- | ----------------- | ---------- | ------- |
-| x       | *        | Record_LineNumber | Integer(5) | 1       |
+| +       | +        | RecordLine_Number       | Integer(5) | 1       |
+| +       | +        | RecordLine_ExternalName | Text(255)  | EXAMPLE1       |
 
-The **Record_LineNumber** is a required field that allows you to reference the line item in *PATCH* and *GET* calls. Each value must be unique to the order, meaning two lines can't both have a *Record_LineNumber* of '1'. If this occurs, the payload will be discarded and an error will be returned.
+The **RecordLine_Number** and **RecordLine_ExternalName** are fields that allow you to reference the line item in *PATCH* and *GET* calls. Each value must be unique to the order, meaning two lines can't both have a *Record_LineNumber* of '1'. If this occurs, the payload will be discarded and an error will be returned. *RecordLine_Number* should be used for integer values only! *RecordLine_ExternalName* may be any character string.
 
 ### General Fields (line)
 
@@ -198,6 +202,9 @@ The **Record_LineNumber** is a required field that allows you to reference the l
 | *       | *        | UnitOfMeasure       | Picklist   | BOTTLE  |
 | +       | +        | PurchaseOrderNumber | Text(10)   | PO1234  |
 | +       | +        | AdditionalComments  | Text(50)   |         |
+| +       | +        | LineCustomerField1  | Text(255)  |         |
+| +       | +        | LineCustomerField2  | Text(255)  |         |
+| +       | +        | LineCustomerField3  | Text(255)  |         |
 
 **LotNumber** tells us which lot we will be picking/receiving for this request. 
 
@@ -205,7 +212,7 @@ The **Record_LineNumber** is a required field that allows you to reference the l
 
 **PurchaseOrderNumber** tells us what purchase order number applies specifically to this line of material. It should only be provided if it differs from the header level PurchaseOrderNumber.
 
-**AdditionalComments** is used to store any additional information pertaining to this line of material that we didn't explicitly provide a field for. It currently lives exclusively on Salesforce and will not appear on any forms.
+**AdditionalComments** and **LineCustomerField**s are used to store any additional information pertaining to this line of material that we didn't explicitly provide a field for. They currently live exclusively on Salesforce and will not appear on any forms.
 
 ### Product Number Fields (line)
 
