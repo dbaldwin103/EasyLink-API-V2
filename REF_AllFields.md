@@ -189,7 +189,7 @@ These are fields that reflect how the order has been processed in the Rinchem sy
 | +       | +        | Record_Status           | Picklist  | SUBMITTED                                                    |
 | +       | +        | Record_Message          | Text(255) | Your record has passed initial validation and has been submitted to our warehouse management system. |
 | +       | +        | Record_CreatedDate      | Date/Time | 2018-07-25T22:58:03.000Z                                     |
-| +       | +        | Record_LastModifiedDate | Date/Time | John Doe                                                     |
+| +       | +        | Record_LastModifiedDate | Date/Time | 2018-07-25T23:23:14.000Z                                     |
 
 The **Record_Status** and **Record_Message** fields describe the status of the request within Rinchem's system. Please see the ***REF_PicklistValues.md*** file for all available statuses and their meaning.
 
