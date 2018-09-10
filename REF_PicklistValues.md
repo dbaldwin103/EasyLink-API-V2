@@ -93,3 +93,16 @@ If you have no preference for carrier, RINCHEM should be be selected and a carri
 | SPCL        | SPECIAL AUTHORIZATION REQUIRED | Yes            |
 | VH          | VENDOR HOLD                    | No             |
 | WST         | WASTE                          | Yes            |
+
+
+### Record Status Codes
+
+| Record_Status | Description                | 
+| ----------- | ------------------------------ | 
+| UNKNOWN         | Record status couldn't currently be determined.                        | 
+| PENDING          | Record has successfully entered Salesforce as a request.                       | 
+| SUBMITTED        | Record has successfully been staged by our warehouse management system and the request has become a 'real' order.        | 
+| PROCESSED         | Order has successfully been validated and accepted by our warehouse management system, and is planned to be shipped/received.   | 
+| SHIPPED         | Order material has successfully been shipped from the warehouse.                         | 
+| RECEIVED        | Order material has successfully been received by the warehouse. | 
+| FAILED          | Record was unable to be processed at some stage in the process. The Record_Message should contain more information.                    | 
