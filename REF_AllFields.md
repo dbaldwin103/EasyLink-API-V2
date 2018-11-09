@@ -145,9 +145,9 @@ The remaining **Freight_BillTo** fields are only applicable if ***Third Party***
 | *       | x        | ShipTo_WarehouseCode | Picklist | 16                 |
 | x       | *        | ShipTo_Name          | Text(40) | John Doe           |
 | x       | +        | ShipTo_Company       | Text(40) | EXAMPLE CO         |
-| x       | *        | ShipTo_Street1       | Text(30) | 123 Example Street |
-| x       | +        | ShipTo_Street2       | Text(30) |                    |
-| x       | +        | ShipTo_Street3       | Text(30) |                    |
+| x       | *        | ShipTo_Street1       | Text(40) | 123 Example Street |
+| x       | +        | ShipTo_Street2       | Text(40) |                    |
+| x       | +        | ShipTo_Street3       | Text(40) |                    |
 | x       | *        | ShipTo_City          | Text(20) | Albuquerque        |
 | x       | *        | ShipTo_State         | Text(20) | NM                 |
 | x       | *        | ShipTo_PostalCode    | Text(10) | 87109              |
@@ -166,9 +166,9 @@ The other **ShipTo** fields should only be used in the case of an **Outbound** r
 | x       | *        | ShipFrom_WarehouseCode | Picklist | 11                 |
 | *       | x        | ShipFrom_Name          | Text(40) | John Doe           |
 | +       | x        | ShipFrom_Company       | Text(40) | EXAMPLE CO         |
-| *       | x        | ShipFrom_Street1       | Text(30) | 123 Example Street |
-| +       | x        | ShipFrom_Street2       | Text(30) |                    |
-| +       | x        | ShipFrom_Street3       | Text(30) |                    |
+| *       | x        | ShipFrom_Street1       | Text(40) | 123 Example Street |
+| +       | x        | ShipFrom_Street2       | Text(40) |                    |
+| +       | x        | ShipFrom_Street3       | Text(40) |                    |
 | *       | x        | ShipFrom_City          | Text(20) | Albuquerque        |
 | *       | x        | ShipFrom_State         | Text(20) | NM                 |
 | *       | x        | ShipFrom_PostalCode    | Text(10) | 87109              |
@@ -208,7 +208,7 @@ The **RecordLine_Number** and **RecordLine_ExternalName** are fields that allow 
 
 | Inbound | Outbound | Field Name          | Format     | Example |
 | ------- | -------- | ------------------- | ---------- | ------- |
-| *       | *        | Quantity            | Integer(5) | 6       |
+| *       | *        | Quantity            | Integer(12)| 6       |
 | *       | *        | LotNumber           | Text(20)   | 12345   |
 | +       | x        | SerialNumber        | Text(50)   | 54321   |
 | *       | *        | UnitOfMeasure       | Picklist   | BOTTLE  |
@@ -259,7 +259,7 @@ These are fields that reflect how the order has been processed in the Rinchem sy
 
 | Inbound | Outbound | Field Name                       | Format     | Example       |
 | ------- | -------- | -------------------------------- | ---------- | ------------- |
-| +       | +        | Actual_Quantity                  | Integer(5) | 2             |
+| +       | +        | Actual_Quantity                  | Integer(12)| 2             |
 | +       | +        | Actual_LotNumber                 | Text(20)   | 12345         |
 | +       | +        | Actual_Product_RinchemPartNumber | Text(25)   | 12345_EXAMPLE |
 
