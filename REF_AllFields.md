@@ -171,7 +171,7 @@ The other **ShipTo** fields should only be used in the case of an **Outbound** r
 
 | Inbound | Outbound | Field Name             | Format   | Example            |
 | ------- | -------- | ---------------------- | -------- | ------------------ |
-| x       | *        | ShipFrom_WarehouseCode | Picklist | 11                 |
+| x       | * w      | ShipFrom_WarehouseCode | Picklist | 11                 |
 | *       | x        | ShipFrom_Name          | Text(40) | John Doe           |
 | +       | x        | ShipFrom_Company       | Text(40) | EXAMPLE CO         |
 | +       | x        | ShipFrom_Street1       | Text(40) | 123 Example Street |
