@@ -38,10 +38,7 @@ The ***Inbound*** and ***Outbound*** columns show the availability of the field 
 > '**\***' signifies that the field is both available and required. 
 > '**x**' signifies that the field is not available and will be ignored by the API.
 > 
-
-Only certain fields get passed through to our Warehouse Management System (WMS). These fields are distinguished with a '**w**' in the Inbound/Outbound column. On *GET* requests, these fields will additionally be returned with the value currently in our WMS system. In the return payload, these fields will be distinguished by the prefix **WMS_** followed by the standard field name.  
-
-
+> '**w**' signifies that the field gets passed through to our Warehouse Management System (WMS). On *GET* requests, these fields will have an additional field returned with the value currently in our WMS system. These additional fields will be distinguished by the prefix **WMS_** followed by the standard field name.  
 
 ## Header Fields
 
