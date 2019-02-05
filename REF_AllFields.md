@@ -28,15 +28,23 @@ The available fields are listed below in the given tables. They are separated in
 The ***Format*** column shows the data type that will be accepted by the API.
 
 > **Text(X)** signifies that any ascii character string with *X* characters or less will be accepted.
+>
 > **Integer(X)** signifies that any whole numerical value with *X* digits or less will be accepted.
+>
 > **Date** signifies that any date in the format of '**yyyy-mm-dd**' will be accepted.
+>
 > **Boolean** signifies that either 'true' or 'false' should be provided.
+>
 > **Picklist** signifies that this is not a free-form field and certain Rinchem approved values must be provided. Look to the description text to find more information about the acceptable values.
 
 The ***Inbound*** and ***Outbound*** columns show the availability of the field for the desired request type. 
 > '**+**' signifies that the field is available for use, but not required. 
+>
 > '**\***' signifies that the field is both available and required. 
+>
 > '**x**' signifies that the field is not available and will be ignored by the API.
+>
+> ---
 > 
 > '**w**' signifies that the field gets passed through to our Warehouse Management System (WMS). On *GET* requests, these fields will have an additional field returned with the value currently in our WMS system. These additional fields will be distinguished by the prefix **WMS_** followed by the standard field name.  
 
