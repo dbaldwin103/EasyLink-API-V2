@@ -170,11 +170,9 @@ Cancels and updates may only be processed while the order is still in the stagin
 
 
 
-## GET
+## GET (single)
 
 A *GET* call, similar to *PATCH Cancel* doesn't need to send a payload, rather it will receive a payload in response. It requires only one parameter be passed in, either **Record_Name** or **Record_ExternalName**.
-
-In the future it will accept a second parameter allowing you to retrieve either the full record payload, or the record status.
 
 ```http
 GET <your_api_suffix>?Record_ExternalName=<your_record_external_name> HTTP/1.1
@@ -195,3 +193,33 @@ A successful *GET* call will return the following "Success" detail:
 ```
 
 ***your_record_payload*** will be in the same format as the payload you sent in. 
+
+Additionally, if you only want certain fields to be returned you may send parameters **HeaderFields** and **LineItemFields** with the desired list of fields that you desire. For example, [*?HeaderFields=Record_Name,SupplierCode*] will retrieve the desired payload with only Record_Name and SupplierCode data.
+
+
+
+## GET (bulk)
+
+The *GET* bulk call will return all records that have been modified after the specified date. Two parameters will need to be set to access this endpoint. The first is **Bulk** which will need to be set to *true*. The second is **StartDate** which will be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. The **StartDate** parameter must be wrapped in string quotes.
+
+Additional parameters **HeaderFields** and **LineItemFields** may also be provided, the same as the *GET* single request.
+
+```http
+GET <your_api_suffix>?Bulk=true&amp;StartDate="2019-02-04T22:17:28Z" HTTP/1.1
+Host: <your_instance_url>
+Authorization: Bearer <your_access_token>
+Accept: application/json
+Content-Type: application/json
+```
+
+A successful *GET* call will return the following "Success" detail:
+
+```
+{
+    "status":"Success",
+    "message":"Your record has been retrieved successfully", 
+    "records" : [<found_records>]
+}
+```
+
+***records*** will be an array of all order payloads that were found. 
