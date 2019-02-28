@@ -106,7 +106,7 @@ Two url parameters are required to send a *PATCH* call:
 
 ### Update
 
-A *PATCH Update* call will need to send the full payload again! To prevent incorrect data, all fields will need to be sent again for an Update request, even though you may only be updating one or two fields. For example, to update the quantity requested on the payload POST payload above, you might send:
+A *PATCH Update* call will need to send the full payload again! To prevent incorrect data, all fields will need to be sent again for an Update request, even though you may only be updating one or two fields. For example, to update the quantity requested on the POST payload above, you might send:
 
 ```http
 PATCH <your_api_suffix>?Record_Name=<your_record_name>&amp;Action=Update HTTP/1.1
@@ -215,13 +215,13 @@ A successful *GET* call will return the following "Success" detail:
 
 ***your_record_payload*** will be in the same format as the payload you sent in. 
 
-Additionally, if you only want certain fields to be returned you may send parameters **HeaderFields** and **LineItemFields** with the desired list of fields that you desire. For example, [*?HeaderFields=Record_Name,SupplierCode*] will retrieve the desired payload with only Record_Name and SupplierCode data.
+Additionally, if you only want certain fields to be returned you may send parameters **HeaderFields** and **LineItemFields** with the desired list of fields that you desire. For example, [*?HeaderFields=Record_Name,SupplierCode*] will retrieve the desired payload with only Record_Name and SupplierCode data in the header information.
 
 
 
 ## GET (bulk)
 
-The *GET* bulk call will return all records that have been modified after the specified date. Two parameters will need to be set to access this endpoint. 
+The *GET* bulk call will return all records that match the search parmeters passed. Two parameters are required to access this endpoint:
 **Bulk** will tell the enpoint that we aren't requesting a specific record. This will need to be set to *true*. 
 **StartDate** will exclude any orders that have a last modifide date before than this. The date need to be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. Also, this parameter must be wrapped in string quotes.
 
