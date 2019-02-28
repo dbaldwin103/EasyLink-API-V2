@@ -106,7 +106,7 @@ Two url parameters are required to send a *PATCH* call:
 
 ### Update
 
-A *PATCH Update* call does not need to send the full payload! If only the *DesiredDeliveryDate* needs to be modified, then only that field needs to be sent. For example:
+A *PATCH Update* call will need to send the full payload again! To prevent incorrect data, all fields will need to be sent again for an Update request, even though you may only be updating one or two fields. For example, to update the quantity requested on the payload POST payload above, you might send:
 
 ```http
 PATCH <your_api_suffix>?Record_Name=<your_record_name>&amp;Action=Update HTTP/1.1
@@ -116,11 +116,32 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "DesiredDeliverDate": "11-04-2018"
+    "OwnerCode" : "OWN",
+    "SupplierCode" : "SUP",
+    "DesiredDeliveryDate" : "10-22-2018",
+    "Freight_CarrierService" : "RINCHEM",
+    "Freight_BillTo_Type" : "Requester",
+    "Freight_IsInternational" : "FALSE",
+    "ShipFrom_WarehouseCode" : "11",
+    "ShipTo_Name" : "John Doe",
+    "ShipTo_Street1" : "123 Example Street",
+    "ShipTo_City" : "Albuquerque",
+    "ShipTo_State" : "NM",
+    "ShipTo_PostalCode" : "87109",
+    "ShipTo_Country" : "USA",
+    
+    "LineItems" : 
+    [
+        {
+            "Record_LineNumber" : 1,
+            "ProductNumber_Owner" : "OWN1234",
+            "LotNumber" : "12345",
+            "Quantity" : 10,
+            "UnitOfMeasure" : "BOTTLE" 
+        }
+    ]
 }
 ```
-
-**Note: Fields may not be updated to *null*! Any field that needs a value removed should be assigned an empty string!!!**
 
 If the authentication tokens are still valid and the JSON content body is valid, a response will be returned with the following "success" detail:
 
@@ -144,7 +165,7 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-Note: Cancels are not reversible, if for some reason the order shouldn't have been cancelled the full payload will need to be sent again.  
+Note: Cancels are not reversible, if for some reason the order shouldn't have been cancelled the full payload will need to be sent as a new order.  
 
 If the authentication tokens are still valid and the request is valid, a response will be returned with the following "success" detail:
 
@@ -200,9 +221,14 @@ Additionally, if you only want certain fields to be returned you may send parame
 
 ## GET (bulk)
 
-The *GET* bulk call will return all records that have been modified after the specified date. Two parameters will need to be set to access this endpoint. The first is **Bulk** which will need to be set to *true*. The second is **StartDate** which will be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. The **StartDate** parameter must be wrapped in string quotes.
+The *GET* bulk call will return all records that have been modified after the specified date. Two parameters will need to be set to access this endpoint. 
+**Bulk** will tell the enpoint that we aren't requesting a specific record. This will need to be set to *true*. 
+**StartDate** will exclude any orders that have a last modifide date before than this. The date need to be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. Also, this parameter must be wrapped in string quotes.
 
-Additional parameters **HeaderFields** and **LineItemFields** may also be provided, the same as the *GET* single request.
+Additional parameters:
+**EndDate** will exclude any orders that have a last modified date after than this. The same format as StartDate. 
+**Statuses** will only return orders that have one of these *Record_Status*. Provided as a comma separated list. *SHIPPED,PROCESSED*
+**HeaderFields** and **LineItemFields** restrict the fields that are returned by the request. The same as the *GET* single request.
 
 ```http
 GET <your_api_suffix>?Bulk=true&amp;StartDate="2019-02-04T22:17:28Z" HTTP/1.1
