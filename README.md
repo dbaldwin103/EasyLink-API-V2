@@ -55,7 +55,7 @@ This file is going to explain the payload structure as well as discuss some desi
 
 The third step in connecting to our API is going to be combining the credentials you received from the *Authenticating* phase and the payload that you built during the *BuildingPayloads* phase into one request that you can send Rinchem for processing. 
 
-This file is going to explain how to set up the request depending on whether you want to send a new payload, update a prior payload, or cancel a payload entirely. It is also going to explain the successful responses that you can expect to see after sending the request..
+This file is going to explain how to set up the request depending on whether you want to send a new payload, update a prior payload, cancel a payload, or retrieve existing orders. It is also going to explain the successful responses that you can expect to see after sending the request..
 
 ### [README_HandlingErrors.md](README_HandlingErrors.md)
 
