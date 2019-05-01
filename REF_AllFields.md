@@ -259,7 +259,7 @@ The **HoldCode** and **Attributes** fields are only available for **Inbound** re
 
 The **HoldCode** field lets us know the hold code that is associated with the order. For example, sending VH, would let us know that the material is on vendor hold. The **HoldCode_Reason** field would then be used to let us know why. The **Attributes** fields on the other hand are allocations applied to the material. 
 
-Both **HoldCode** and **Attributes** must use Rinchem accepted values. Please see the ***REF_PicklistValues.md*** file for a list of available statuses and attributes.
+Both **HoldCode** and **Attributes** must use Rinchem accepted values. Please see the ***REF_PicklistValues.md*** file for a list of available hold codes and attributes.
 
 ### GET Only Fields (line)
 
