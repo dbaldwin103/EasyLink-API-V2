@@ -244,7 +244,7 @@ The **RecordLine_Number** and **RecordLine_ExternalName** are fields that allow 
 
 The **ProductNumber** fields specify the part number of the product that is being shipped. Any, and at least one, of the three must be sent in. If any of the three are found, the other two will be populated based on our alias table. If none of them are found, an error case will be created and manual intervention will be required.
 
-### Status and Attribute Fields (line)
+### Hold Code and Attribute Fields (line)
 
 | Inbound | Outbound | Field Name                 | Format   | Example            |
 | ------- | -------- | -------------------------- | -------- | ------------------ |
@@ -255,11 +255,11 @@ The **ProductNumber** fields specify the part number of the product that is bein
 | + w     | x w      | Attributes_Other           | Text(30) | IO,PQ              |
 | + w     | x w      | Attributes_ComponentStatus | Text(30) | NT                 |
 
-The **Status** and **Attributes** fields are only available for **Inbound** requests. They let us know what state the material is in when we receive it in our warehouse.
+The **HoldCode** and **Attributes** fields are only available for **Inbound** requests. They let us know what state the material is in when we receive it in our warehouse.
 
-The **Status** field lets us know the hold code that is associated with the order. For example, sending VH, would let us know that the material is on vendor hold. The **Status_Reason** field would then be used to let us know why. The **Attributes** fields on the other hand are allocations applied to the material. 
+The **HoldCode** field lets us know the hold code that is associated with the order. For example, sending VH, would let us know that the material is on vendor hold. The **HoldCode_Reason** field would then be used to let us know why. The **Attributes** fields on the other hand are allocations applied to the material. 
 
-Both **Status** and **Attributes** must use Rinchem accepted values. Please see the ***REF_PicklistValues.md*** file for a list of available statuses and attributes.
+Both **HoldCode** and **Attributes** must use Rinchem accepted values. Please see the ***REF_PicklistValues.md*** file for a list of available statuses and attributes.
 
 ### GET Only Fields (line)
 
