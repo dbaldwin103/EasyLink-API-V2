@@ -248,8 +248,8 @@ The **ProductNumber** fields specify the part number of the product that is bein
 
 | Inbound | Outbound | Field Name                 | Format   | Example            |
 | ------- | -------- | -------------------------- | -------- | ------------------ |
-| + w     | x w      | Status                     | Picklist | VH                 |
-| +       | x        | Status_Reason              | Text(25) | Needs verification |
+| + w     | x w      | HoldCode                   | Picklist | VH                 |
+| +       | x        | HoldCode_Reason            | Text(25) | Needs verification |
 | + w     | x w      | Attributes_Destination     | Text(30) | D12                |
 | + w     | x w      | Attributes_Process         | Text(30) | 1272               |
 | + w     | x w      | Attributes_Other           | Text(30) | IO,PQ              |
