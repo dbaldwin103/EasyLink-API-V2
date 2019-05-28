@@ -17,7 +17,6 @@
 > > [Record Fields](#record-fields-line)<br/>
 > > [General Fields](#general-fields-line)<br/>
 > > [Product Number Fields](#product-number-fields-line)<br/>
-> > [GET Only Fields](#get-only-fields-line)<br/>
 
 ## Overview
 
@@ -260,15 +259,3 @@ The **HoldCode** and **Attributes** fields are only available for **Inbound** re
 The **HoldCode** field lets us know the hold code that is associated with the order. For example, sending VH, would let us know that the material is on vendor hold. The **HoldCode_Reason** field would then be used to let us know why. The **Attributes** fields on the other hand are allocations applied to the material. 
 
 Both **HoldCode** and **Attributes** must use Rinchem accepted values. Please see the ***REF_PicklistValues.md*** file for a list of available hold codes and attributes.
-
-### GET Only Fields (line)
-
-These are fields that reflect how the order has been processed in the Rinchem system and cannot be sent/modified by integrators.
-
-| Inbound | Outbound | Field Name                       | Format     | Example       |
-| ------- | -------- | -------------------------------- | ---------- | ------------- |
-| +       | +        | Actual_Quantity                  | Integer(12)| 2             |
-| +       | +        | Actual_LotNumber                 | Text(20)   | 12345         |
-| +       | +        | Actual_Product_RinchemPartNumber | Text(25)   | 12345_EXAMPLE |
-
-The **Actual_** fields describe what has actually been shipped/received by Rinchem. **Actual_LotNumber** and **Actual_Product_RinchemPartNumber** will initially be populated with the same value as the request **Lot_Number** and **Product_RinchemPartNumber** respectively, however, the values may change based on the actual material shipped. **Actual_Quantity** will be 0 until the order is closed and the actual quantity shipped is known.
