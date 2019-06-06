@@ -222,12 +222,16 @@ Additionally, if you only want certain fields to be returned you may send parame
 ## GET (bulk)
 
 The *GET* bulk call will return all records that match the search parmeters passed. Two parameters are required to access this endpoint:
+
 **Bulk** will tell the enpoint that we aren't requesting a specific record. This will need to be set to *true*. 
+
 **StartDate** will exclude any orders that have a last modifide date before than this. The date need to be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. Also, this parameter must be wrapped in string quotes.
 
 Additional parameters:
 **EndDate** will exclude any orders that have a last modified date after than this. The same format as StartDate. 
+
 **Statuses** will only return orders that have one of these *Record_Status*. Provided as a comma separated list. *SHIPPED,PROCESSED*
+
 **HeaderFields** and **LineItemFields** restrict the fields that are returned by the request. The same as the *GET* single request.
 
 ```http
