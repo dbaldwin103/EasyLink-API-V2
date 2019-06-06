@@ -228,6 +228,7 @@ The *GET* bulk call will return all records that match the search parmeters pass
 **StartDate** will exclude any orders that have a last modifide date before than this. The date need to be in the format *YYYY-MM-DD* or *YYYY-MM-DDTHH:mm:SSZ*. Also, this parameter must be wrapped in string quotes.
 
 Additional parameters:
+
 **EndDate** will exclude any orders that have a last modified date after than this. The same format as StartDate. 
 
 **Statuses** will only return orders that have one of these *Record_Status*. Provided as a comma separated list. *SHIPPED,PROCESSED*
