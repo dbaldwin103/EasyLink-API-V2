@@ -11,6 +11,7 @@
 > > [Freight Fields](#freight-fields)<br/>
 > > [Ship To Fields](#ship-to-fields)<br/>
 > > [Ship From Fields](#ship-from-fields)<br/>
+> > [Customer Fields](#customer-fields)<br/>
 > > [GET Only Fields](#get-only-fields)<br/>
 >
 > [Line Item Fields](#line-item-fields)
@@ -187,20 +188,7 @@ The **ShipTo_WarehouseCode** should only be used in the case of an **Outbound** 
 
 The other **ShipFrom** fields should only be used in the case of a F2W request.
 
-### GET Only Fields
-
-These are fields that reflect how the order has been processed in the Rinchem system and cannot be sent/modified by integrators.
-
-| Inbound | Outbound | Disposition | Field Name              | Format    | Example                                                      |
-| ------- | -------- | ----------- | ----------------------- | --------- | ------------------------------------------------------------ |
-| +       | +        | x           | Record_Status           | Picklist  | SUBMITTED                                                    |
-| +       | +        | x           | Record_Message          | Text(255) | Your record has passed initial validation and has been submitted to our warehouse management system. |
-| + w     | + w      | x           | Record_CreatedDate      | Date/Time | 2018-07-25T22:58:03.000Z                                     |
-| + w     | + w      | x           | Record_LastModifiedDate | Date/Time | 2018-07-25T23:23:14.000Z                                     |
-
-The **Record_Status** and **Record_Message** fields describe the status of the request within Rinchem's system. Please see the ***REF_PicklistValues.md*** file for all available statuses and their meaning.
-
-## Customer Fields
+### Customer Fields
 | Inbound | Outbound | Disposition | Field Name                       | Format        | Example         |
 | ------- | -------- | ----------- | -------------------------------- | ------------- | --------------- |
 | x       | x        | +           | Customer_AvailableHoldCodes      | List(String)  | ["OH"]          |
@@ -214,6 +202,19 @@ The **Customer_AvailableHoldCodes** field contains all the hold codes that could
 The **Customer_ModifyLotsWithHoldCodes** field is a way to specifiy which lots can be modified based on the hold code status of each line item. For example, if any of the line items in the requested lot have a hold code other than OK, then this lot becomes unmodifiable else if it has all line items with the status OK then it will successfully modify the lots.   
 
 The **Customer_ReturnRecord** field if set true will return record values. 
+
+### GET Only Fields
+
+These are fields that reflect how the order has been processed in the Rinchem system and cannot be sent/modified by integrators.
+
+| Inbound | Outbound | Disposition | Field Name              | Format    | Example                                                      |
+| ------- | -------- | ----------- | ----------------------- | --------- | ------------------------------------------------------------ |
+| +       | +        | x           | Record_Status           | Picklist  | SUBMITTED                                                    |
+| +       | +        | x           | Record_Message          | Text(255) | Your record has passed initial validation and has been submitted to our warehouse management system. |
+| + w     | + w      | x           | Record_CreatedDate      | Date/Time | 2018-07-25T22:58:03.000Z                                     |
+| + w     | + w      | x           | Record_LastModifiedDate | Date/Time | 2018-07-25T23:23:14.000Z                                     |
+
+The **Record_Status** and **Record_Message** fields describe the status of the request within Rinchem's system. Please see the ***REF_PicklistValues.md*** file for all available statuses and their meaning.
 
 ## Line Item Fields
 
