@@ -76,6 +76,25 @@
 }
 ```
 
+## Minimum Disposition Payload
+
+```json
+{
+    "Customer_AvailableHoldCodes": ["OH"],
+    "Customer_ModifyLotsWithHoldCodes": ["OK"],
+    "Customer_ReturnRecord": true,
+
+    "LineItems" : 
+    [
+        {
+            "Product_OwnerPartNumber" : "00186390",
+            "LotNumber" : "0000250390",
+			"HoldCode" : "OH"
+        }
+    ]
+}
+```
+
 ## Full Inbound Payload
 
 ```json
@@ -206,6 +225,28 @@
     ]
 }
 ```
+
+## Full Disposition Payload
+
+```json
+{
+    "OwnerCode" : "OWN",
+    "SupplierCode" : "",
+    "Customer_AvailableHoldCodes": ["OH"],
+    "Customer_ModifyLotsWithHoldCodes": ["OK"],
+    "Customer_ReturnRecord": true,
+
+    "LineItems" : 
+    [
+        {
+            "Product_OwnerPartNumber" : "00186390",
+            "LotNumber" : "0000250390",
+			"HoldCode" : "OH"
+        }
+    ]
+}
+```
+
 
 ## Full Generic Payload
 
