@@ -4,8 +4,10 @@
 
 > [Minimum Inbound Payload](#minimum-inbound-payload)<br/>
 > [Minimum Outbound Payload](#minimum-outbound-payload)<br/>
+> [Minimum Disposition Payload](#minimum-dispostion-payload)<br/>
 > [Full Inbound Payload](#full-inbound-payload)<br/>
 > [Full Outbound Payload](#full-outbound-payload)<br/>
+> [Full Disposition Payload](#full-dispostion-payload)<br/>
 > [Full Generic Payload](#full-generic-payload)<br/>
 
 
